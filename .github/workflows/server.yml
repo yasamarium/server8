@@ -1,4 +1,4 @@
-name: AS Cloud - SERVER8 (SD-Turbo 0.9B Image Generation)
+﻿name: AS Cloud - SERVER7 (SD-Turbo 0.9B Image Generation)
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
     - cron: '0 */6 * * *'
 
 concurrency:
-  group: server8-singleton
+  group: server7-singleton
   cancel-in-progress: false
 
 jobs:
@@ -76,7 +76,7 @@ jobs:
 
       - name: 7. Run Unit Tests
         run: |
-          MOCK_MODEL=true pytest tests/test_api.py -v
+          PYTHONPATH=. MOCK_MODEL=true python -m pytest tests/test_api.py -v
 
       - name: 8. Start SD-Turbo Server & Public Tunnel (~5-Hour Session)
         run: |
@@ -87,3 +87,4 @@ jobs:
         if: always() && steps.cache-hf.outcome != 'failure'
         run: |
           python scripts/retrigger_workflow.py
+

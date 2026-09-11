@@ -1,1 +1,1 @@
-https://cash-vanilla-paso-organizational.trycloudflare.com
+https://api.trycloudflare.com

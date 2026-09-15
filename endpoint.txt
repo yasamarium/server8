@@ -1,1 +1,1 @@
-https://walter-silence-operations-oven.trycloudflare.com
+https://api.trycloudflare.com
